@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Number = (props) => {
+const Clear = (props) => {
 	const id = props.id;
 	const value = props.value;
-	const number = props.number;
+	const clear = props.clear;
     return (
-        <button onClick={number} id={id}>
+        <button id={id} onClick={clear}>
 			{value}
 		</button>
     );
 };
 
-export default Number;
+export default Clear;
