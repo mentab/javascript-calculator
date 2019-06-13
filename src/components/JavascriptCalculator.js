@@ -11,8 +11,7 @@ class JavascriptCalculator extends Component {
 		super(props);
 
 		this.state = {
-			display: '0',
-			currentNumber: '0'
+			display: '0'
 		}
 		this.handleNumber = this.handleNumber.bind(this);
 		this.handleOperator = this.handleOperator.bind(this);
@@ -25,53 +24,58 @@ class JavascriptCalculator extends Component {
 		// number should not begin with multiple zeros
 		if (this.state.display !== '0' || event.target.innerText !== '0') {
 			this.setState({
-				display: this.state.display + event.target.innerText,
-				currentNumber: this.state.currentNumber + event.target.innerText
+				display: this.state.display + event.target.innerText
 			});
 		}
 		// number should not start with zero
 		if (this.state.display === '0') {
 			this.setState({
-				display: event.target.innerText,
-				currentNumber: event.target.innerText
+				display: event.target.innerText
 			});
 		}
 	}
 
 	handleOperator(event) {
+		// if 2 or more operators are entered consecutively, the operation performed should be the last operator entered
+		/*if (this.state.display && ['+', '/', '*', '-'].includes(this.state.display.charAt(this.state.display.length - 1))) {
+			this.setState({
+				display: this.state.display.slice(0, -1) + event.target.innerText
+			});
+		} else {
+			this.setState({
+				display: this.state.display + event.target.innerText
+			});
+		};*/
+
 		this.setState({
-			display: this.state.display + event.target.innerText,
-			currentNumber: '0'
+			display: this.state.display + event.target.innerText
 		});
 	}
 
 	handleDecimal(event) {
+		const lastNumber = this.state.display.split(/\+|-|\/|\*/).reverse()[0];
 		// two "." in one number should not be accepted
-		if (!this.state.currentNumber.includes('.')) {
+		if (!lastNumber.includes('.')) {
 			this.setState({
-				display: this.state.display + event.target.innerText,
-				currentNumber: this.state.currentNumber + event.target.innerText
+				display: this.state.display + event.target.innerText
 			});
 		}
 	}
 
 	handleClear() {
 		this.setState({
-			display: '0',
-			currentNumber: '0'
+			display: '0'
 		});
 	}
 
-	handleEqual(event) {
+	handleEqual() {
 		this.setState({
-			display: this.state.display + event.target.innerText,
-			currentNumber: '0'
+			display: eval(this.state.display)
 		});
 	}
 
 	render() {
 		const display = this.state.display;
-		const currentNumber = this.state.currentNumber;
 		const number = this.handleNumber;
 		const operator = this.handleOperator;
 		const decimal = this.handleDecimal;
@@ -79,7 +83,7 @@ class JavascriptCalculator extends Component {
 		const equal = this.handleEqual;
 		return (
 			<div>
-				<Display id="display" display={display} currentNumber={currentNumber}/>
+				<Display id="display" display={display}/>
 				<Number id="zero" value="0" number={number}/>
 				<Number id="one" value="1" number={number}/>
 				<Number id="two" value="2" number={number}/>
