@@ -37,7 +37,7 @@ class JavascriptCalculator extends Component {
 
 	handleOperator(event) {
 		// if 2 or more operators are entered consecutively, the operation performed should be the last operator entered
-		/*if (this.state.display && ['+', '/', '*', '-'].includes(this.state.display.charAt(this.state.display.length - 1))) {
+		if (['+', '/', '*', '-'].includes(this.state.display.charAt(this.state.display.length - 1))) {
 			this.setState({
 				display: this.state.display.slice(0, -1) + event.target.innerText
 			});
@@ -45,11 +45,7 @@ class JavascriptCalculator extends Component {
 			this.setState({
 				display: this.state.display + event.target.innerText
 			});
-		};*/
-
-		this.setState({
-			display: this.state.display + event.target.innerText
-		});
+		};
 	}
 
 	handleDecimal(event) {
@@ -70,7 +66,7 @@ class JavascriptCalculator extends Component {
 
 	handleEqual() {
 		this.setState({
-			display: eval(this.state.display)
+			display: eval(this.state.display).toString()
 		});
 	}
 
