@@ -5,6 +5,7 @@ import Operator from './Operator';
 import Decimal from './Decimal';
 import Clear from './Clear';
 import Equal from './Equal';
+import './JavascriptCalculator.css';
 
 class JavascriptCalculator extends Component {
 	constructor(props) {
@@ -78,7 +79,7 @@ class JavascriptCalculator extends Component {
 		const clear = this.handleClear;
 		const equal = this.handleEqual;
 		return (
-			<div>
+			<div class="wrapper">
 				<Display id="display" display={display}/>
 				<Number id="zero" value="0" number={number}/>
 				<Number id="one" value="1" number={number}/>

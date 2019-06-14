@@ -5,7 +5,7 @@ const Operator = (props) => {
 	const value = props.value;
 	const operator = props.operator;
     return (
-        <button id={id} onClick={operator}>
+        <button id={id} class={id} onClick={operator}>
 			{value}
 		</button>
     );

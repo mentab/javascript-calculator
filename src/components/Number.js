@@ -5,7 +5,7 @@ const Number = (props) => {
 	const value = props.value;
 	const number = props.number;
     return (
-        <button onClick={number} id={id}>
+        <button onClick={number} id={id} class={id}>
 			{value}
 		</button>
     );

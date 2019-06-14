@@ -5,7 +5,7 @@ const Clear = (props) => {
 	const value = props.value;
 	const clear = props.clear;
     return (
-        <button id={id} onClick={clear}>
+        <button id={id} class={id} onClick={clear}>
 			{value}
 		</button>
     );

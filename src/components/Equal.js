@@ -5,7 +5,7 @@ const Equal = (props) => {
 	const value = props.value;
 	const equal = props.equal;
     return (
-        <button id={id} onClick={equal}>
+        <button id={id} class={id} onClick={equal}>
 			{value}
 		</button>
     );

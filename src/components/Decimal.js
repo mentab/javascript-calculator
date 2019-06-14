@@ -5,7 +5,7 @@ const Decimal = (props) => {
 	const value = props.value;
 	const decimal = props.decimal;
     return (
-        <button id={id} onClick={decimal}>
+        <button id={id} class={id} onClick={decimal}>
 			{value}
 		</button>
     );
