@@ -1,13 +1,14 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 const Equal = (props) => {
 	const id = props.id;
 	const value = props.value;
 	const equal = props.equal;
     return (
-        <button id={id} class={id} onClick={equal}>
+        <Button id={id} className={id} onClick={equal} color="info">
 			{value}
-		</button>
+		</Button>
     );
 };
 

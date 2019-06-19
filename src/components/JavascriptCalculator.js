@@ -6,6 +6,7 @@ import Decimal from './Decimal';
 import Clear from './Clear';
 import Equal from './Equal';
 import './JavascriptCalculator.css';
+import { Jumbotron } from 'reactstrap';
 
 class JavascriptCalculator extends Component {
 	constructor(props) {
@@ -79,7 +80,7 @@ class JavascriptCalculator extends Component {
 		const clear = this.handleClear;
 		const equal = this.handleEqual;
 		return (
-			<div class="wrapper">
+			<Jumbotron className="wrapper">
 				<Display id="display" display={display}/>
 				<Number id="zero" value="0" number={number}/>
 				<Number id="one" value="1" number={number}/>
@@ -98,7 +99,7 @@ class JavascriptCalculator extends Component {
 				<Decimal id="decimal" value="." decimal={decimal}/>
 				<Clear id="clear" value="C" clear={clear}/>
 				<Equal id="equals" value="=" equal={equal}/>
-			</div>
+			</Jumbotron>
 		);
 	}
 }

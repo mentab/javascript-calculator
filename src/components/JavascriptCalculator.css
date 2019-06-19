@@ -1,38 +1,13 @@
 .wrapper {
-	--main-bg-color: dimgray;
-	--btn-bg-color: floralwhite;
-	--display-bg-color: darkslategray ;
-	--white-color: white;
 	display: grid;
 	grid-template-columns: repeat(4, 4em);
 	grid-template-rows: repeat(6, 4em);
 	grid-gap: 1em;
-	padding: 1em;
-	background: var(--main-bg-color);
-	border-radius: .25em;
-	box-shadow: 15px 15px var(--display-bg-color);
-}
-
-.wrapper button {
-	background: var(--btn-bg-color);
-	border: none;
-	text-decoration: none;
-	outline: none !important;
-	border-radius: .25em;
-	box-shadow: 3px 3px var(--display-bg-color);
 }
 
 .display {
 	grid-column: 1 / 5;
 	grid-row: 1;
-	background: var(--display-bg-color);
-	color: var(--white-color);
-	display: flex;
-    align-items: center;
-	justify-content: flex-end;
-	padding: 1em;
-	overflow: hidden;
-	border-radius: .25em;
 }
 
 .zero {

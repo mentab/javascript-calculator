@@ -1,13 +1,14 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 const Number = (props) => {
 	const id = props.id;
 	const value = props.value;
 	const number = props.number;
     return (
-        <button onClick={number} id={id} class={id}>
+        <Button id={id} className={id} onClick={number} color="primary">
 			{value}
-		</button>
+		</Button>
     );
 };
 

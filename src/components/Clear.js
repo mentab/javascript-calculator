@@ -1,13 +1,14 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 const Clear = (props) => {
 	const id = props.id;
 	const value = props.value;
 	const clear = props.clear;
     return (
-        <button id={id} class={id} onClick={clear}>
+        <Button id={id} className={id} onClick={clear} color="success">
 			{value}
-		</button>
+		</Button>
     );
 };
 
