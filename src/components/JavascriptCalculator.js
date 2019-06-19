@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import Display from './Display';
-import Number from './Number';
-import Operator from './Operator';
-import Decimal from './Decimal';
-import Clear from './Clear';
-import Equal from './Equal';
+import JavascriptCalculatorDisplay from './JavascriptCalculatorDisplay';
+import JavascriptCalculatorButton from './JavascriptCalculatorButton';
 import './JavascriptCalculator.css';
 import { Jumbotron } from 'reactstrap';
 
@@ -81,24 +77,24 @@ class JavascriptCalculator extends Component {
 		const equal = this.handleEqual;
 		return (
 			<Jumbotron className="wrapper">
-				<Display id="display" display={display}/>
-				<Number id="zero" value="0" number={number}/>
-				<Number id="one" value="1" number={number}/>
-				<Number id="two" value="2" number={number}/>
-				<Number id="three" value="3" number={number}/>
-				<Number id="four" value="4" number={number}/>
-				<Number id="five" value="5" number={number}/>
-				<Number id="six" value="6" number={number}/>
-				<Number id="seven" value="7" number={number}/>
-				<Number id="eight" value="8" number={number}/>
-				<Number id="nine" value="9" number={number}/>
-				<Operator id="add" value="+" operator={operator}/>
-				<Operator id="subtract" value="-" operator={operator}/>
-				<Operator id="multiply" value="*" operator={operator}/>
-				<Operator id="divide" value="/" operator={operator}/>
-				<Decimal id="decimal" value="." decimal={decimal}/>
-				<Clear id="clear" value="C" clear={clear}/>
-				<Equal id="equals" value="=" equal={equal}/>
+				<JavascriptCalculatorDisplay id="display" display={display} color="primary"/>
+				<JavascriptCalculatorButton id="zero" value="0" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="one" value="1" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="two" value="2" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="three" value="3" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="four" value="4" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="five" value="5" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="six" value="6" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="seven" value="7" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="eight" value="8" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="nine" value="9" click={number} color="secondary"/>
+				<JavascriptCalculatorButton id="add" value="+" click={operator} color="info"/>
+				<JavascriptCalculatorButton id="subtract" value="-" click={operator} color="info"/>
+				<JavascriptCalculatorButton id="multiply" value="*" click={operator} color="info"/>
+				<JavascriptCalculatorButton id="divide" value="/" click={operator} color="info"/>
+				<JavascriptCalculatorButton id="decimal" value="." click={decimal} color="success"/>
+				<JavascriptCalculatorButton id="clear" value="C" click={clear} color="warning"/>
+				<JavascriptCalculatorButton id="equals" value="=" click={equal}/>
 			</Jumbotron>
 		);
 	}
