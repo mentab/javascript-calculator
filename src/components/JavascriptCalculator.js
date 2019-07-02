@@ -11,14 +11,9 @@ class JavascriptCalculator extends Component {
 		this.state = {
 			display: '0'
 		}
-		this.handleNumber = this.handleNumber.bind(this);
-		this.handleOperator = this.handleOperator.bind(this);
-		this.handleDecimal = this.handleDecimal.bind(this);
-		this.handleClear = this.handleClear.bind(this);
-		this.handleEqual = this.handleEqual.bind(this);
 	}
 
-	handleNumber(event) {
+	handleNumber = (event) => {
 		// number should not begin with multiple zeros
 		if (this.state.display !== '0' || event.target.innerText !== '0') {
 			this.setState({
@@ -33,7 +28,7 @@ class JavascriptCalculator extends Component {
 		}
 	}
 
-	handleOperator(event) {
+	handleOperator = (event) => {
 		// if 2 or more operators are entered consecutively, the operation performed should be the last operator entered
 		if (['+', '/', '*', '-'].includes(this.state.display.charAt(this.state.display.length - 1))) {
 			this.setState({
@@ -46,7 +41,7 @@ class JavascriptCalculator extends Component {
 		};
 	}
 
-	handleDecimal(event) {
+	handleDecimal = (event) => {
 		const lastNumber = this.state.display.split(/\+|-|\/|\*/).reverse()[0];
 		// two "." in one number should not be accepted
 		if (!lastNumber.includes('.')) {
@@ -56,20 +51,20 @@ class JavascriptCalculator extends Component {
 		}
 	}
 
-	handleClear() {
+	handleClear = () => {
 		this.setState({
 			display: '0'
 		});
 	}
 
-	handleEqual() {
+	handleEqual = () => {
 		this.setState({
 			display: eval(this.state.display).toString()
 		});
 	}
 
 	render() {
-		const display = this.state.display;
+		const { display } = this.state;
 		const number = this.handleNumber;
 		const operator = this.handleOperator;
 		const decimal = this.handleDecimal;
